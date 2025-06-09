@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Admin panel for managing riksha bookings" />
+  <meta name="robots" content="noindex" />
+  <title>Admin Panel - Riksha Booking</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preload" href="styles.css" as="style" />
+</head>
+<body>
+  <div class="container" id="loginPanel" role="main">
+    <h2>Admin Login</h2>
+    <form id="adminLoginForm" aria-label="Admin Login Form" novalidate>
+      <div class="form-group">
+        <label for="adminUser">Username</label>
+        <input type="text" id="adminUser" placeholder="Enter username" required aria-required="true" />
+        <span class="error" id="adminUserError"></span>
+      </div>
+      <div class="form-group">
+        <label for="adminPass">Password</label>
+        <input type="password" id="adminPass" placeholder="Enter password" required aria-required="true" />
+        <span class="error" id="adminPassError"></span>
+      </div>
+      <button type="submit" aria-label="Login">Login</button>
+    </form>
+    <p id="loginError" role="alert"></p>
+  </div>
+
+  <div class="container" id="adminPanel" style="display: none;" role="region" aria-label="Admin Dashboard">
+    <div class="admin-header">
+      <h2>Booking Requests</h2>
+      <button id="logoutBtn" aria-label="Logout">Logout</button>
+    </div>
+    <table id="bookingTable" aria-label="Booking Requests Table">
+      <thead>
+        <tr>
+          <th scope="col">Name</th>
+          <th scope="col">Mobile</th>
+          <th scope="col">Pickup</th>
+          <th scope="col">Drop</th>
+          <th scope="col">Date & Time</th>
+          <th scope="col">Driver</th>
+          <th scope="col">Status</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </div>
+
+  <script src="script.js" defer></script>
+</body>
+</html>

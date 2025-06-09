@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Book a riksha ride with ease" />
+  <meta name="robots" content="index, follow" />
+  <title>Riksha Booking</title>
+  <link rel="stylesheet" href="styles.css" />
+  <!-- Preload critical CSS -->
+  <link rel="preload" href="styles.css" as="style" />
+</head>
+<body>
+  <div class="container" role="main">
+    <h2>Riksha Booking Form</h2>
+    <form id="bookingForm" aria-label="Riksha Booking Form" novalidate>
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" id="name" placeholder="Enter your name" required aria-required="true" />
+        <span class="error" id="nameError"></span>
+      </div>
+      <div class="form-group">
+        <label for="mobile">Mobile Number</label>
+        <input type="tel" id="mobile" placeholder="Enter 10-digit mobile number" required pattern="[0-9]{10}" aria-required="true" />
+        <span class="error" id="mobileError"></span>
+      </div>
+      <div class="form-group">
+        <label for="pickup">Pickup Location</label>
+        <input type="text" id="pickup" placeholder="Enter pickup location" required aria-required="true" />
+        <span class="error" id="pickupError"></span>
+      </div>
+      <div class="form-group">
+        <label for="drop">Drop-off Location</label>
+        <input type="text" id="drop" placeholder="Enter drop-off location" required aria-required="true" />
+        <span class="error" id="dropError"></span>
+      </div>
+      <div class="form-group">
+        <label for="dateTime">Date and Time</label>
+        <input type="datetime-local" id="dateTime" required aria-required="true" />
+        <span class="error" id="dateTimeError"></span>
+      </div>
+      <button type="submit" id="submitBtn" aria-label="Book Riksha">Book Riksha</button>
+      <span class="loading" id="loading" style="display: none;">Processing...</span>
+    </form>
+    <p id="message" role="alert"></p>
+  </div>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
